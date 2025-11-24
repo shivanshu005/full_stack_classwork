@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Water Drop Animation</title>
+
+<style>
+    body {
+        margin: 0;
+        background: navy;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .drop, .ripple {
+        position: absolute;
+        border-radius: 50%;
+        animation: animate 2s infinite;
+    }
+
+    .drop {
+        width: 20px;
+        height: 20px;
+        background: deepskyblue;
+        top: -50px;
+    }
+
+    .ripple {
+        width: 10px;
+        height: 10px;
+        border: 2px solid deepskyblue;
+        opacity: 0;
+        bottom: 120px;
+    }
+
+    @keyframes animate {
+        0% { transform: translateY(0); opacity: 1; }
+        60% { transform: translateY(270px); opacity: 1; }
+        100% { transform: translateY(270px) scale(7); opacity: 0; }
+    }
+</style>
+</head>
+
+<body>
+    <div class="drop"></div>
+    <div class="ripple"></div>
+</body>
+</html>

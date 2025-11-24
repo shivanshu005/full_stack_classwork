@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Webpage Layout</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .header {
+      background-color: orange;
+      height: 80px;
+      text-align: center;
+      line-height: 80px;
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .navbar {
+      background-color: cyan;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+
+    .navbar a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    .main {
+      display: flex;
+      height: 400px;
+    }
+
+    .sidebar {
+      background-color: pink;
+      width: 30%;
+      padding: 20px;
+    }
+
+    .content {
+      background-color: beige;
+      width: 70%;
+      padding: 20px;
+    }
+
+    .footer {
+      background-color: green;
+      height: 60px;
+      text-align: center;
+      line-height: 60px;
+      color: white;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">Header</div>
+
+  <div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <div class="main">
+    <div class="sidebar">Sidebar</div>
+    <div class="content">Main Content</div>
+  </div>
+
+  <div class="footer">Footer</div>
+
+</body>
+</html>

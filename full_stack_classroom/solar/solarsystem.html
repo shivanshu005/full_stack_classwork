@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Solar System </title>
+    <style>
+        body {
+            margin: 0;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .solar-system {
+            position: relative;
+            width: 500px;
+            height: 500px;
+        }
+
+        .sun {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, yellow, orange);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 20px 5px yellow;
+        }
+
+        .orbit {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border: 1px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .orbit1 {
+            width: 150px;
+            height: 150px;
+            animation: rotate1 10s linear infinite;
+        }
+
+        .orbit2 {
+            width: 250px;
+            height: 250px;
+            animation: rotate2 20s linear infinite;
+        }
+
+        .planet {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(75px, 0);
+        }
+
+        .planet1 {
+            background: #3498db;
+        }
+
+        .planet2 {
+            background: #e74c3c;
+            transform: translate(125px, 0);
+        }
+
+        @keyframes rotate1 {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        @keyframes rotate2 {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        button {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="solar-system">
+        <div class="sun"></div>
+        
+        <div class="orbit orbit1">
+            <div class="planet planet1"></div>
+        </div>
+        
+        <div class="orbit orbit2">
+            <div class="planet planet2"></div>
+        </div>
+    </div>
+    <button onclick="toggleAnimation()">Toggle Animation</button>
+
+    <script>
+        const orbit1 = document.querySelector('.orbit1');
+        const orbit2 = document.querySelector('.orbit2');
+        let isAnimating = true;
+
+        function toggleAnimation() {
+            if(isAnimating){
+                orbit1.style.animationPlayState = 'paused';
+                orbit2.style.animationPlayState = 'paused';
+            } else {
+                orbit1.style.animationPlayState = 'running';
+                orbit2.style.animationPlayState = 'running';
+            }
+            isAnimating = !isAnimating;
+        }
+    </script>
+</body>
+</html>
